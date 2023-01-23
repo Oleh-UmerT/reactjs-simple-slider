@@ -37,6 +37,8 @@ function App() {
     setMoveOn(-300 * +activeButton);
   }, [activeButton]);
 
+  console.log(activeButton);
+
   return (
     <div className="App">
       <button onClick={handleClick} id="before">
@@ -45,23 +47,41 @@ function App() {
       <div className="row">
         <div
           id="first"
-          style={{
+          style={
+            activeButton === "0" ?
+            {
             //"move" line:
             transform: `translateX(${moveOn}px)`,
+            filter: "blur(0)"
+          } : {
+            transform: `translateX(${moveOn}px)`,
+            filter: "blur(5px)"
           }}
         ></div>
         <div
           id="second"
-          style={{
+          style={
+            activeButton === "1" ?
+            {
             //"move" line:
             transform: `translateX(${moveOn}px)`,
+            filter: "blur(0)"
+          } : {
+            transform: `translateX(${moveOn}px)`,
+            filter: "blur(5px)"
           }}
         ></div>
         <div
           id="third"
-          style={{
+          style={
+            activeButton === "2" ?
+            {
             //"move" line:
             transform: `translateX(${moveOn}px)`,
+            filter: "blur(0)"
+          } : {
+            transform: `translateX(${moveOn}px)`,
+            filter: "blur(5px)"
           }}
         ></div>
       </div>
